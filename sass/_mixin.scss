@@ -1,0 +1,126 @@
+// clearfix
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+// image responsive
+@mixin img-responsive {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+// image replace text
+
+@mixin bg($name,$bg) {
+  background: url("../img/#{$name}.#{$bg}");
+  width: image-width("../img/#{$name}.#{$bg}");
+  height: image-height("../img/#{$name}.#{$bg}");
+}
+
+@mixin text-hide {
+  white-space: nowrap;
+  // text-indent: 100%;
+  overflow: hidden;
+}
+
+@mixin logo($name,$bg) {
+	@include bg($name,$bg);
+    @include text-hide();
+}
+
+// algin
+@mixin right {
+    float: right !important;
+}
+@mixin left {
+    float: left !important;
+}
+@mixin center {
+    text-align: !important;
+}
+// border-radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// triangle 0.866666
+@mixin triangle ($size, $color, $align,$type:1) {
+  height: 0;
+  width: 0;
+    @if $align == top {
+        border-bottom: ($size*$type) solid $color;
+        border-left: ($size/2) solid transparent;
+        border-right: ($size/2) solid transparent;
+    }
+    @else if $align == right {
+        border-left: ($size*$type) solid $color;
+        border-top: ($size/2) solid transparent;
+        border-bottom: ($size/2) solid transparent;
+    }
+    @else if $align == bottom {
+        border-top: ($size*$type) solid $color;
+        border-left: ($size/2) solid transparent;
+        border-right: ($size/2) solid transparent;
+    }
+    @else if $align == left {
+        border-right: ($size*$type) solid $color;
+        border-top: ($size/2) solid transparent;
+        border-bottom: ($size/2) solid transparent;
+    }
+    @else if $align == right-top {
+        border-right: $size solid $color;
+        border-bottom: $size solid transparent;
+    }
+    @else if $align == left-top {
+        border-left: $size solid $color;
+        border-bottom: $size solid transparent;
+        }
+    @else if $align == right-bottom {
+        border-right: $size solid $color;
+        border-top: $size solid transparent;
+    }
+    @else if $align == left-bottom {
+        border-left: $size solid $color;
+        border-top: $size solid transparent;
+    }
+}
+// button
+
+@mixin btn {
+    display: inline-block;
+    font-family: inherit;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+@mixin primary-btn {
+	color: #fff;
+    background-color: $theme-sec-color;
+    border-color: $theme-sec-color;
+    border-width: 0;
+    border-radius: 5px; 
+}
+
+@mixin cancel-btn {
+	color: #fff;
+    background-color: $cancel-color;
+    border-color: $cancel-color;
+    border-width: 0;
+    border-radius: 5px;
+}	

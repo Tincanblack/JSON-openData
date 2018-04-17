@@ -1,0 +1,137 @@
+@import "var";
+@import "reset";
+@import "mixin";
+$icons-spacing: 10px;
+@import "icons/*.png";
+@include all-icons-sprites;
+
+
+* {
+  box-sizing: border-box;
+  -mox-box-sizing: border-box;
+  -webit-box-sizing: border-box;
+}
+
+body {
+	font-family: '微軟正黑體';
+	font-size: $base-font-size;
+	background: #eeefff;
+}
+
+header {
+	background: url(../img/Hero.png) no-repeat;
+	background-size: cover;
+	max-width: 100%;
+	height: 380px;
+	overflow: hidden;
+	.jumbotron {
+		background: transparent;
+		.title h1 {
+			text-align: center;
+			color: $white;
+		}
+	}
+	.select-field {
+		text-align: center;
+		select {
+		    width: 80%;
+		    margin: 20px auto 0px auto;
+		    display: block;
+		    font-size: 1.5em;
+		    border: 3px solid #fff;
+		    background-color: rgba(255, 255, 255, 0.7);
+		}
+	}
+
+}
+
+.place-field {
+	min-height: 450px;
+	.areaTitle {
+		text-align: center;
+		font-size: $h1-font-size;
+		margin-bottom: 30px;
+		color: #8A82CC;
+	}
+}
+
+.hotSopc-field {
+	h3 {
+		font-size: $h3-font-size;
+		margin-bottom: 20px;
+	}
+	.hotSopc {
+		background: $white;
+		padding: 10px 50px;
+		margin-top: -80px;
+		margin-bottom: 30px;
+		border-radius: 10px;
+		button {
+			margin-bottom: 10px;
+			width: 100%;
+			&:hover {
+				opacity: 0.9;
+				transition: all .3s;
+				color: $white;
+			}
+		}
+		> div:nth-child(2) button {
+			background-color: #8A82CC;
+		}
+		> div:nth-child(3) button {
+			background-color: #FFA782;
+		}
+		> div:nth-child(4) button {
+			background-color: #F5D105;
+		}
+		> div:nth-child(5) button {
+			background-color: #559AC8;
+		}
+	}
+}
+
+.thumbnail {
+	min-height: 300px;
+	.locationPhoto {
+		max-height: 200px;
+		overflow: hidden;
+		position: relative;
+	}
+	.photoTitle {
+		margin: -40px 10px 0;
+		position: relative;
+		top: -10px;
+		color: $white;
+		h3 {
+			position: absolute;
+			font-size: $h3-font-size;
+		}
+		h4 {
+			position: absolute;
+			right: 0;
+			font-size: $h4-font-size;
+		}
+	}
+	.des {
+		margin:50px 10px 0;
+		p {
+			padding-left: 25px;
+			@include text-hide;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+footer {
+	line-height: 1.5em;
+	padding: 30px;
+	background:$theme-color;
+	text-align: center;
+	h3 {
+		font-size: $h4-font-size;
+		color: $white;
+	}
+	span {
+		color: #FFD366;
+	}
+}
